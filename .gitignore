@@ -28,6 +28,3 @@ octave-workspace
 presentacion/video/
 *.mp4
 
-# Desarrollo matematico: solo se sube el PDF
-desarrollo_matematico/*
-!desarrollo_matematico/desarrollo_matematico.pdf
