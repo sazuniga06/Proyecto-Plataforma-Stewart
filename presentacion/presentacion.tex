@@ -11,7 +11,7 @@
 \usepackage{graphicx}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,positioning,calc}
-\graphicspath{{../informe/figs/}{../desarrollo_matematico/figs/}}
+\graphicspath{{../informe/figs/}{../informe/calculos/figs/}}
 % identificador numerado de figuras
 \newcounter{figdiap}
 \newcommand{\fig}[1]{\refstepcounter{figdiap}{\footnotesize\color{tenue}\textbf{Figura~\thefigdiap.} #1\par}}
@@ -59,7 +59,7 @@
 % resultado destacado y valores numericos de la plataforma
 \newcommand{\resultado}[1]{\par\smallskip\begin{beamercolorbox}[rounded=true,sep=0.45em,center]{block body}#1\end{beamercolorbox}\par\smallskip}
 \newcommand{\valores}{{\color{acento}\textbf{En la plataforma:}}\ }
-\input{../desarrollo_matematico/valores.tex}
+\input{../informe/calculos/valores.tex}
 \input{../informe/tablas/referencias_valores.tex}
 
 \title{Modelado, identificación y control de una plataforma Stewart 6-SPS}
@@ -1137,7 +1137,7 @@ La regla usual, un observador 2 a 5 veces más rápido que el controlador, supon
 \toprule
 Estrategia & RMS [mm / $^\circ$] & ITAE & $J_u$ [N$^2$s] & Robustez \\
 \midrule
-\tabinput{../desarrollo_matematico/tablas/tabla1.tex}
+\tabinput{../informe/calculos/tablas/tabla1.tex}
 \bottomrule
 \end{tabular}
 

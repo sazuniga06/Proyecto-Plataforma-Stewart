@@ -74,7 +74,7 @@ flowchart LR
         F[generar_figuras_informe.py<br>generar_datos_calculo.py] --> G
     end
     O -->|ganancias_optimas.json| A
-    F -->|figuras, tablas, valores.tex| DOC[informe/, presentacion/,<br>desarrollo_matematico/]
+    F -->|figuras, tablas, valores.tex| DOC[informe/,<br>presentacion/]
     A -->|rediseño en caliente| E
 ```
 
@@ -167,7 +167,7 @@ En la vista 3D: arrastrar rota, la rueda hace zoom y el doble clic vuelve a la v
 
 ## Modelo de la planta
 
-El desarrollo completo, paso a paso, está en el documento de cálculo matemático (`desarrollo_matematico/desarrollo_matematico.pdf`); el informe (`informe/informe.pdf`) lo resume.
+El desarrollo completo, paso a paso, está en `desarrollo_matematico/desarrollo_matematico.pdf`; el informe (`informe/informe.pdf`) lo resume.
 
 **Cinemática.** Pose $\mathbf q = [x\ y\ z\ \phi\ \theta\ \psi]^\top$ con rotación $\mathbf R = \mathbf R_z(\psi)\mathbf R_y(\theta)\mathbf R_x(\phi)$. La cinemática inversa es cerrada, $l_i = \lVert\mathbf p + \mathbf R\mathbf s_i - \mathbf b_i\rVert$. El Jacobiano es $\dot{\mathbf l} = \mathbf J\boldsymbol\nu$, con $\mathbf J_i = [\mathbf n_i^\top\ \ (\mathbf R\mathbf s_i\times\mathbf n_i)^\top]$. En el espacio de trabajo, $\kappa(\mathbf J) \le 27.4$.
 
@@ -295,10 +295,10 @@ Todo se reproduce con un solo script desde la raíz del proyecto:
 | 6. Figuras y tablas del informe | `.venv/bin/python scripts/generar_figuras_informe.py` | `informe/figs/`, `informe/tablas/` |
 | 6b. Resultados y capturas por tipo de movimiento | `.venv/bin/python scripts/resultados_referencias.py` y `scripts/capturas_referencias.py` (con entorno gráfico) | `informe/tablas/referencias*.tex`, `informe/figs/ref_*.pdf`, `informe/figs/capturas/` |
 | 6c. Figuras de los modelos (lazo abierto, frecuencia, lazo cerrado lineal, observador) | `.venv/bin/python scripts/figuras_modelos.py` | `informe/figs/modelo_*.pdf`, `lazo_cerrado_lineal.pdf`, `observador_error.pdf` |
-| 7. Figuras, tablas y valores del documento matemático | `.venv/bin/python scripts/generar_datos_calculo.py` | `desarrollo_matematico/figs/`, `tablas/`, `valores.tex` |
-| 8. PDF | `xelatex` sobre `desarrollo_matematico.tex`; `pdflatex` sobre `informe.tex` y `presentacion.tex` | los tres PDF |
+| 7. Figuras, tablas y valores compartidos | `.venv/bin/python scripts/generar_datos_calculo.py` | `informe/calculos/figs/`, `tablas/`, `valores.tex` |
+| 8. PDF | `pdflatex` sobre `informe.tex` y `presentacion.tex` | los dos PDF |
 
-Los resultados de las etapas 1 a 4 ya están en `results/`, de modo que el simulador funciona sin recalcular nada. La etapa 6 recalcula $J$ desde la simulación y comprueba que coincide con el valor registrado por el optimizador. Todos los números de los tres documentos salen de estos archivos.
+Los resultados de las etapas 1 a 4 ya están en `results/`, de modo que el simulador funciona sin recalcular nada. La etapa 6 recalcula $J$ desde la simulación y comprueba que coincide con el valor registrado por el optimizador. Todos los números del informe y de la presentación salen de estos archivos.
 
 ---
 
@@ -347,12 +347,12 @@ proyecto_final/
 │   ├── exportar_datos_informe.m        Datos del motor de Octave para el informe
 │   ├── generar_figuras_informe.py      Figuras y tablas del informe y de la presentación
 │   ├── figuras_modelos.py              Figuras de los modelos lineal, no lineal y en lazo cerrado del informe
-│   ├── generar_datos_calculo.py        Figuras, tablas y valores (valores.tex) del documento matemático
+│   ├── generar_datos_calculo.py        Figuras, tablas y valores (valores.tex) compartidos en informe/calculos/
 │   └── reproducir_todo.sh              Ejecuta todas las etapas y compila los PDF
 ├── results/                            Matrices, parámetros óptimos, identificación y resultados
-├── informe/                          Informe IEEE: informe.tex, informe.pdf, figs/, tablas/, datos/
+├── informe/                          Informe IEEE: informe.tex, informe.pdf, figs/, tablas/, datos/, calculos/
 ├── presentacion/                     Presentación: presentacion.tex, presentacion.pdf, video/ (no se sube)
-├── desarrollo_matematico/            Cuaderno del desarrollo matemático: .tex, .pdf, figs/, tablas/, fuentes/, valores.tex
+├── desarrollo_matematico/            Cuaderno del desarrollo matemático (PDF)
 └── tests/                              Pruebas de integración Octave–Python
 ```
 

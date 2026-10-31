@@ -7,7 +7,7 @@ cada pata como cuerpos rigidos, fuerza axial de cada pata como entrada):
     M(q) qddot + C(q, qdot) qdot + g(q) = (J T)' F + tau_d
 
 Se escribe con las velocidades de los cuerpos, u_k = U_k qdot con U_k = J_k T (ecs. de las velocidades del
-cilindro, del piston y de la pata en desarrollo_matematico.tex):
+cilindro, del piston y de la pata en el desarrollo matematico):
     dp_i = v + w x p_i,   w_l = lb_i x dp_i,   v_C = bC (w_l x n_i),   v_S = dp_i - bS (w_l x n_i)
 Como w_l es perpendicular a n_i, la inercia axial de cilindro y piston no interviene y su inercia
 rotacional actua como el escalar I_perp. Con las columnas de U_k (velocidades para qdot = e_j):

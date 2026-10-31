@@ -27,3 +27,7 @@ octave-workspace
 # Video de la presentacion (supera el limite de 100 MB de GitHub): no se sube
 presentacion/video/
 *.mp4
+
+# Desarrollo matematico: solo se sube el PDF
+desarrollo_matematico/*
+!desarrollo_matematico/desarrollo_matematico.pdf

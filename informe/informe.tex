@@ -20,13 +20,13 @@
 \newcommand{\vect}[1]{\bm{#1}}
 \newcommand{\T}{^{\mathsf{T}}}
 \newcommand{\sk}[1]{[#1]_{\times}}
-\graphicspath{{figs/}{../desarrollo_matematico/figs/}}
+\graphicspath{{figs/}{calculos/figs/}}
 \renewcommand{\IEEEkeywordsname}{Palabras clave}
 % \input primitivo (expandible) para filas de tablas generadas por scripts/generar_figuras_informe.py
 \makeatletter
 \newcommand{\tabinput}[1]{\@@input #1 }
 \makeatother
-\input{../desarrollo_matematico/valores.tex}
+\input{calculos/valores.tex}
 \input{tablas/referencias_valores.tex}
 
 \begin{document}
@@ -618,7 +618,7 @@ Cada caso impone dos ecuaciones lineales en $(C_1, C_2)$: $x = 0$ en un extremo 
 \toprule
 Caso & Inicio & Final & Condiciones & $z^\star(0)$ & $z^\star(T)$ & $\mathcal J^\star$ \\
 \midrule
-\tabinput{../desarrollo_matematico/tablas/frontera.tex}
+\tabinput{calculos/tablas/frontera.tex}
 \bottomrule
 \end{tabular}
 \end{table}

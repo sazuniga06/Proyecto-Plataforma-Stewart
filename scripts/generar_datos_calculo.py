@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 generar_datos_calculo.py
-Figuras, tablas y valores numericos (valores.tex) del documento desarrollo_matematico.tex, calculados con el mismo
+Figuras, tablas y valores numericos (valores.tex) compartidos por el informe y la presentacion (informe/calculos/),
+calculados con el mismo
 codigo de la simulacion:
   - results/validacion_modelo.mat         (octave_engine/dynamics/validar_modelo_dinamico.m)
   - results/octave_control_matrices.mat  (exportar_matrices_control_octave.m)
@@ -22,7 +23,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-HERE = os.path.join(ROOT, "desarrollo_matematico")
+HERE = os.path.join(ROOT, "informe", "calculos")
 RES = os.path.join(ROOT, "results")
 FIG = os.path.join(HERE, "figs")
 TAB = os.path.join(HERE, "tablas")

@@ -27,8 +27,7 @@ $OCT scripts/exportar_datos_informe.m
 "$PY" scripts/resultados_referencias.py
 [ -n "${DISPLAY:-}${WAYLAND_DISPLAY:-}" ] && "$PY" scripts/capturas_referencias.py   # requiere entorno grafico
 "$PY" scripts/generar_datos_calculo.py
-(cd desarrollo_matematico && for i in 1 2; do xelatex -interaction=nonstopmode desarrollo_matematico.tex > /dev/null; done)
 for doc in informe/informe presentacion/presentacion; do
     (cd "$(dirname "$doc")" && for i in 1 2; do pdflatex -interaction=nonstopmode "$(basename "$doc").tex" > /dev/null; done)
 done
-echo "Listo: desarrollo_matematico/desarrollo_matematico.pdf, informe/informe.pdf y presentacion/presentacion.pdf"
+echo "Listo: informe/informe.pdf y presentacion/presentacion.pdf"
