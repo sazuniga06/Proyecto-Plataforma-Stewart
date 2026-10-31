@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# LaTeX (auxiliares de compilacion)
+*.aux
+*.log
+*.out
+*.nav
+*.snm
+*.toc
+*.vrb
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# Octave
+octave-workspace
+
+# Sistema y editores
+.DS_Store
+.vscode/
+.idea/
+
+# Video de la presentacion (supera el limite de 100 MB de GitHub): no se sube
+presentacion/video/
+*.mp4
